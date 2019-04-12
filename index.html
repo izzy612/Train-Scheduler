@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+<link rel="stylesheet" href="assets/css/style.css">
+<title>Train Schedule</title>
+</head>
+<body>
+
+
+    <div class="jumbotron jumbotron-fluid bg-dark text-danger">
+        <div class="container">
+          <h1 class="text-center">Anytime is Train Time</h1>
+          <p class="text-center">All aboard the choo choo train.</p>
+        </div>
+      </div>
+
+      <main class="container-fluid">
+          <div class="row">
+         
+             <!-- Add Train Panel -->
+          <aside class="col-12 col-md-3">
+          <div class="card">
+              <h4 class="card-header bg-dark text-danger">
+                  Add Train
+              </h4>
+              <div class="card-body">
+                  <form id="train-form">
+                      <div class="form-group">
+                          <label for="trainName">Train Name:</label>
+                          <input type="text" class="form-control" id="train-name">
+                      </div>
+                      <div class="form-group">
+                          <label for="destination">Destination:</label>
+                          <input type="text" class="form-control" id="train-destination">
+                      </div>
+                      <div class="form-group">
+                          <label for="startYear">First Train Time: (military time) </label>
+                          <input type="text" class="form-control" placeholder="HH:MM" id="train-time">
+                      </div>
+                      <div class="form-group">
+                          <label for="endYear">Frequency (minutes)</label>
+                          <input type="text" class="form-control" id="time-freq">
+                      </div>
+                      <div class="btn-group" role="group">
+                          <button type="submit" id="btn-add" class="btn btn-danger text-dark">Submit</button>
+                      </div>
+                  </form>
+              </div>
+              </aside>
+              <!-- end Add Train Panel -->
+
+               <!-- Train Schedule Panel -->
+          
+          <section class="col-12 col-md-9">
+              <div class="card">
+                  <h4 class="card-header bg-dark text-danger">
+                      Current Train Schedule
+                  </h4>
+                  <div class="card-body">
+                  <table class="table">
+                      <tr>
+                          <th scope="col">Train Name</th>
+                          <th scope="col">Destination</th>
+                          <th scope="col">Frequency (min)</th>
+                          <th scrope="col">Minutes Away</th>
+                          <th scope="col">Next Arrival</th>
+                      </tr>
+                      <tbody id="table-data">
+
+                      </tbody>
+                  </table>
+                 </div>
+                </div>
+           </section>
+          
+               <!-- end Train Schedule Panel -->
+
+          </div>
+        </div>
+      </main>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.9.3/firebase.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script src="assets/javascript/ap.js"></script>
+</body>
+</html>
