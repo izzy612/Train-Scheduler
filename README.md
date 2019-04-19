@@ -7,12 +7,12 @@ A train schedule application that incorporates Firebase to host arrival and depa
 
 
 # Technologies used
-jQuery
-Firebase
-Moment.js
-Bootstrap
-HTML
-CSS
+<ul>jQuery</ul>
+<ul>Firebase</ul>
+  <ul>Moment.js</ul>
+  <ul>Bootstrap</ul>
+<ul>HTML</ul>
+<ul>CSS</ul>
 
 <br>
 https://izzy612.github.io/Train-Scheduler/
