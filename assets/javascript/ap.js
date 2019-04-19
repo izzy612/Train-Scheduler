@@ -15,6 +15,11 @@ var database = firebase.database();
 $('#train-form').on('submit', function(event) {
   event.preventDefault();
 
+  // trainName = $("#train-name").val().trim();
+  // destination = $("#train-destination").val().trim();
+  // time = $("#train-time").val().trim();
+  // frequency = $("#time-freq");
+
   // gather our form data
   var trainDataInput = {
     name: $('#train-name')
@@ -31,35 +36,43 @@ $('#train-form').on('submit', function(event) {
       .trim()
   };
 
-  // add to firebase
+  // // add to firebase
   database.ref().push(trainDataInput);
+  $("#train-name").val(" ");
+  $("#train-destination").val(" ");
+  $("#train-time").val(" ");
+  $("#time-freq").val(" ");
+
 });
 
 database.ref().on("child_added", function (childSnapshot) {
   console.log("this is child_added");
-  console.log(childSnapshot.val());
+ 
 
   var trainData = childSnapshot.val();
 
-  
   var frequency = trainData.frequency;
+  console.log(frequency);
 
-  var startTime = trainData.startTime;
+  
+
+  var startTime = trainData.time;
   console.log(startTime)
+  
 
   var startTimeConverted = moment(startTime, "HH:mm").subtract(1, "years");
-  console.log(startTimeConverted);
+  
+  var currentTime = moment();
 
 
-
-  var timeDiff = moment().diff(moment(startTimeConverted), "minutes");
+  var timeDiff = moment().diff(startTimeConverted, "minutes");
   console.log(timeDiff);
 
   var tRemainder = timeDiff % frequency;
 
   var tMinutesTillNextTrain = frequency - tRemainder;
 
-  var nextTrain = (moment().add(tMinutesTillNextTrain, "minutes")).format("hh:mm");
+  var nextTrain = moment().add(tMinutesTillNextTrain, "minutes").format("hh:mm");
   
   
   
